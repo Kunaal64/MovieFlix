@@ -21,6 +21,8 @@
 
 html, body {
   overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -28,6 +30,7 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  font-size: 16px;
 }
 
 #root {
@@ -47,7 +50,7 @@ a:hover {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2rem, 5vw, 3.2em);
   line-height: 1.1;
 }
 
@@ -68,6 +71,19 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
 }
 
 @media (prefers-color-scheme: light) {

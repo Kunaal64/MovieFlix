@@ -1,11 +1,12 @@
 .home {
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .search-container {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 .search-form {
@@ -13,16 +14,17 @@
   gap: 1rem;
   max-width: 800px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .search-input {
   flex: 1;
-  padding: 0.8rem 1rem;
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(0.8rem, 2vw, 1rem);
   border: none;
   border-radius: 5px;
   background-color: #2a2a2a;
   color: #fff;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   transition: all 0.3s ease;
 }
 
@@ -33,14 +35,15 @@
 }
 
 .search-button {
-  padding: 0.8rem 1.5rem;
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
   border: none;
   border-radius: 5px;
   background-color: #e50914;
   color: #fff;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .search-button:hover {
@@ -49,20 +52,22 @@
 
 .tabs {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tab {
-  padding: 0.8rem 1.5rem;
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
   border: none;
   border-radius: 5px;
   background-color: #2a2a2a;
   color: #ccc;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .tab:hover {
@@ -77,27 +82,29 @@
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 20vw, 220px), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .error-message {
   text-align: center;
   color: #ff6b6b;
-  margin: 1rem 0;
-  padding: 1rem;
+  margin: clamp(0.5rem, 2vw, 1rem) 0;
+  padding: clamp(0.5rem, 2vw, 1rem);
   background-color: rgba(255, 107, 107, 0.1);
   border-radius: 5px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .loading {
   text-align: center;
   color: #fff;
-  font-size: 1.2rem;
-  padding: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 @media (max-width: 768px) {
@@ -110,7 +117,22 @@
   }
 
   .movies-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .tabs {
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
   }
 }

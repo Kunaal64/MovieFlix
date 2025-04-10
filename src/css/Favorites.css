@@ -1,5 +1,5 @@
 .favorites {
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -7,38 +7,38 @@
 
 .favorites h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .favorites h2 {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .favorites-empty {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  margin: 2rem auto;
+  margin: clamp(1rem, 3vw, 2rem) auto;
   max-width: 600px;
 }
 
 .favorites-empty h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   color: #e50914;
 }
 
 .favorites-empty p {
   color: #999;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.6;
 }
 
@@ -73,12 +73,12 @@
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 .no-favorites-content {
   text-align: center;
-  padding: 3rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   backdrop-filter: blur(10px);
@@ -90,22 +90,22 @@
 }
 
 .no-favorites-icon {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   color: #ff4757;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
   animation: float 3s ease-in-out infinite;
 }
 
 .no-favorites h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
   font-weight: 600;
 }
 
 .no-favorites p {
   color: #b3b3b3;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   line-height: 1.6;
   margin: 0 auto;
   max-width: 400px;
@@ -113,9 +113,9 @@
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 20vw, 220px), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
 }
 
 @media (max-width: 768px) {
@@ -124,24 +124,64 @@
   }
 
   .no-favorites-content {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .no-favorites-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .no-favorites h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .no-favorites p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .movies-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites {
+    padding: 0.75rem;
+  }
+
+  .favorites h1,
+  .favorites h2 {
+    font-size: 1.5rem;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.3rem;
+  }
+
+  .favorites-empty p {
+    font-size: 0.9rem;
+  }
+
+  .no-favorites-content {
+    padding: 1rem;
+  }
+
+  .no-favorites-icon {
+    font-size: 2rem;
+  }
+
+  .no-favorites h2 {
+    font-size: 1.2rem;
+  }
+
+  .no-favorites p {
+    font-size: 0.85rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
   }
 }
 
